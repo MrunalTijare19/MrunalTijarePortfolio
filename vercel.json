@@ -9,6 +9,10 @@
     ],
     "routes": [
       {
+        "src": "/static/(.*)",
+        "dest": "/static/"
+      },
+      {
         "src": "/(.*)",
         "dest": "MrunalPortfolio/wsgi.py"
       }
