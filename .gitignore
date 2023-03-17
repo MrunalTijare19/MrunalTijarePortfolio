@@ -3,6 +3,7 @@
 
 # Ignore all json files
 *.json
+*.sh
 
 # Ignore all txt files
 *.txt
