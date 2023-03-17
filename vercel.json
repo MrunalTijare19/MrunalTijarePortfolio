@@ -1,11 +1,27 @@
 {
-  "builds": [
-    { "src": "manage.py", "use": "@vercel/python" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/manage.py/$1" }
-  ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "MrunalPortfolio.settings"
+    "version": 2,
+    "builds": [
+      {
+        "src": "MrunalPortfolio/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.11.0" }
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "staticfiles_build"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "MrunalPortfolio/wsgi.py"
+      }
+    ]
   }
-}
