@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %} Contact {% endblock title %}
+{% block body %}
+
+<div class="container p-2">
+    <div class="row">
+        <div class="col-md-2"></div>
+  
+        <div class="col-md-8">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3 class="text-white bg-dark text-center p-3">Contact Us</h3>
+  
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+              <strong>{{message}}</strong>  
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+  
+            <div class="card p-2">
+                <form action="/contact/" method="post">{% csrf_token %}
+  
+                    <div class="mb-3">
+                        <h5><label for="exampleFormControlInput1" class="form-label bi bi-person-circle"> Name :</label></h5>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <h5><label for="exampleFormControlInput1" class="form-label bi bi-envelope-fill"> Email address :</label></h5>
+                        <input type="email" value="{{user.email}}" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <h5><label for="exampleFormControlInput1" class="form-label bi bi-telephone-fill"> Phone Number :</label></h5>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="phone number" name="num" required>
+                    </div>
+                    <div class="mb-3">
+                        <h5><label for="exampleFormControlTextarea1" class="form-label"> How Can I Help You?</label></h5>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" name="desc"></textarea>
+                    </div>
+                    <br>
+                
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-dark">Submit</button>
+                    </div>
+                    <br>
+                </form>
+            </div>
+      </div>
+  
+      <div class="col-md-2"></div>
+    </div>
+</div>
+  
+                
+{% endblock body %}
+
+
+
+
+
+
+
+
+
+
