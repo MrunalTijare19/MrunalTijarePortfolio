@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from django.contrib.messages import constants as messages
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,8 @@ SECRET_KEY = 'django-insecure-8kkxo8jpj2gs6z#5&@w_#4lnliqfsgb56l-dyn60=zhu2i^k#2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
+# ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [STATIC_DIR,]
-STATIC_ROOT = (BASE_DIR / 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = (BASE_DIR / 'media')
