@@ -10,7 +10,7 @@
 
         <div class="row">
             {% for post in posts %}
-            <div class="card m-2 pt-2" style="width: 24rem;">
+            <div class="card m-2 pt-2" style="width: 24rem;height: 40rem;">
                 <img class="card-img-top h-25" src="{{post.img.url}}" alt="no image">
                 <div class="card-body">
                     <div class="icon"><i class="bi bi-briefcase"></i></div>
@@ -22,9 +22,7 @@
                 </div>
             </div> 
             {% endfor %}     
-        </div>
-        <br><hr><hr><hr><br><br>
-              
+        </div>        
     </div>
 </section>
 {% endblock body %}
