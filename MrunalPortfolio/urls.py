@@ -22,4 +22,4 @@ urlpatterns = [
     path('',include('portfolio.urls')),
     path('auth/',include('authapp.urls')),
 
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

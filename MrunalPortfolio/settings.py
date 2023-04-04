@@ -16,8 +16,8 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = (BASE_DIR /'templates')
-STATIC_DIR = (BASE_DIR / 'static')
+TEMPLATES_DIR = os.path.join(BASE_DIR ,'templates')
+STATIC_DIR = os.path.join(BASE_DIR , 'static')
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,7 +30,8 @@ SECRET_KEY = 'django-insecure-8kkxo8jpj2gs6z#5&@w_#4lnliqfsgb56l-dyn60=zhu2i^k#2
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ['.vercel.app','.now.sh']
 
 
 # Application definition
@@ -81,23 +82,23 @@ WSGI_APPLICATION = 'MrunalPortfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         # 'URL': os.getenv('postgresql://postgres:akiZEfftwoVZ3cDK104Y@containers-us-west-37.railway.app:7489/railway'),
-#         # 'NAME': os.getenv('railway'),
-#         # 'USER': os.getenv('postgres'),
-#         # 'PASSWORD': os.getenv('akiZEfftwoVZ3cDK104Y'),
-#         # 'HOST': os.getenv('containers-us-west-37.railway.app'),
-#         # 'PORT': os.getenv('7489'),
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        # 'URL': os.getenv('postgresql://postgres:akiZEfftwoVZ3cDK104Y@containers-us-west-37.railway.app:7489/railway'),
+        # 'NAME': os.getenv('railway'),
+        # 'USER': os.getenv('postgres'),
+        # 'PASSWORD': os.getenv('akiZEfftwoVZ3cDK104Y'),
+        # 'HOST': os.getenv('containers-us-west-37.railway.app'),
+        # 'PORT': os.getenv('7489'),
         
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'akiZEfftwoVZ3cDK104Y',
-#         'HOST': 'containers-us-west-37.railway.app',
-#         'PORT': '7489',
-#     }
-# }
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'akiZEfftwoVZ3cDK104Y',
+        'HOST': 'containers-us-west-37.railway.app',
+        'PORT': '7489',
+    }
+}
 
 
 # Password validation
