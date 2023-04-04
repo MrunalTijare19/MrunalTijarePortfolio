@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-8kkxo8jpj2gs6z#5&@w_#4lnliqfsgb56l-dyn60=zhu2i^k#2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -81,12 +81,23 @@ WSGI_APPLICATION = 'MrunalPortfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        # 'URL': os.getenv('postgresql://postgres:akiZEfftwoVZ3cDK104Y@containers-us-west-37.railway.app:7489/railway'),
+        # 'NAME': os.getenv('railway'),
+        # 'USER': os.getenv('postgres'),
+        # 'PASSWORD': os.getenv('akiZEfftwoVZ3cDK104Y'),
+        # 'HOST': os.getenv('containers-us-west-37.railway.app'),
+        # 'PORT': os.getenv('7489'),
+        
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'akiZEfftwoVZ3cDK104Y',
+        'HOST': 'containers-us-west-37.railway.app',
+        'PORT': '7489',
+    }
+}
 
 
 # Password validation

@@ -10,19 +10,21 @@
 
         <div class="row">
             {% for post in posts %}
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-                <div class="col-lg-7" data-aos="fade-right">
-                    <img src="{{post.img.url}}" class="img-fluid" alt="no-image" />
+            <div class="card m-2 pt-2" style="width: 24rem;">
+                <img class="card-img-top h-25" src="{{post.img.url}}" alt="no image">
+                <div class="card-body">
+                    <div class="icon"><i class="bi bi-briefcase"></i></div>
+                    <h4 class="card-text title"><a href="">{{post.title}}</a></h4>
+                    <p class="card-text description">{{post.desciption}}</p>
+                    <p>Posted By: <b>{{post.authname}}</b></p>
+                    <p>Posted on: <b>{{post.timeStamp}}</b></p>
+                    {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
                 </div>
-                <br>
-                <div class="icon"><i class="bi bi-briefcase"></i></div>
-                <h4 class="title"><a href="">{{post.title}}</a></h4>
-                <p class="description">{{post.desciption}}</p>
-                <p>Posted By: <b>{{post.authname}}</b></p>
-                <p>Posted on: <b>{{post.timeStamp}}</b></p>
-            </div>
-            {% endfor %}
+            </div> 
+            {% endfor %}     
         </div>
+        <br><hr><hr><hr><br><br>
+              
     </div>
 </section>
 {% endblock body %}
